@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+require File.expand_path('../../lib/git_runner', __FILE__)
+require File.expand_path('../../lib/cli', __FILE__)
+require 'colorize'
+
+begin
+  Gitrash::Cli.start(ARGV)
+rescue Exception => e
+  puts "Execution Error: #{e.message}".colorize(:red)
+end
